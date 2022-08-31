@@ -1,3 +1,2 @@
 #!/bin/bash/
-alias cr='cd'
-cr $HOME 
+cd ~
