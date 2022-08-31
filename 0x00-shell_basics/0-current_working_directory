@@ -1,4 +1,2 @@
 #!/bin/bash
-#print working directory
 pwd
-
