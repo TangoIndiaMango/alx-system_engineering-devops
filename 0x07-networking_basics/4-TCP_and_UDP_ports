@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# shows listening ports and their running process
+netstat --listen -p
