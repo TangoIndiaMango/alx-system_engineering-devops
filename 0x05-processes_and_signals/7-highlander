@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/env bash
 # Traps SIGTERM
 
 trap "echo I am invincible!!!" SIGTERM
