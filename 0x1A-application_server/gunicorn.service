@@ -1,5 +1,3 @@
-description "Gunicorn application server running AirBnB_clone_v4"
-author "Brennan D Baraban"
 
 start on runlevel [2345]
 stop on runlevel [!2345]
