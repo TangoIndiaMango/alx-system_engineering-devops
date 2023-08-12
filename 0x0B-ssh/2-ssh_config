@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # config file to connect to server without requiring a passphrase everytiime
 Host 
-IdentityFile ~/.ssh/school
+IdentityFile ~/.ssh/id_rsa
 IdentitiesOnly yes
