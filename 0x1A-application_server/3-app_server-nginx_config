@@ -1,6 +1,5 @@
 # /etc/nginx/sites-enabled/your_app_config
 
-# Default server block for port 80
 server {
     listen 80 default_server;
     listen [::]:80 default_server ipv6only=on;
@@ -15,18 +14,14 @@ server {
         root /var/www/html;
         internal;
     }
-}
 
-# Server block for /airbnb-onepage/
-server {
+    # location block for /airbnb-onepage/
     location /airbnb-onepage/ {
         proxy_pass http://127.0.0.1:5000/;
         proxy_set_header X-Served-By 5404-web-01;
     }
-}
 
-# Server block for /airbnb-dynamic/number_odd_or_even/
-server {
+    # location block for /airbnb-dynamic/number_odd_or_even/
     location ~ /airbnb-dynamic/number_odd_or_even/(\d+)$ {
         proxy_pass http://127.0.0.1:5001/number_odd_or_even/$1;
     }
