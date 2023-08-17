@@ -1,4 +1,18 @@
-#!/usr/bin/env bash
-# Gracefully reloads Gunicorn.
+#!/bin/bash
 
-ps aux | grep gunicorn | awk '{ print $2 }' | xargs kill -HUP
+# Define the Gunicorn process name
+GUNICORN_PROCESS="gunicorn"
+
+# Find the process IDs of Gunicorn
+PIDS=$(pgrep -f "$GUNICORN_PROCESS")
+
+if [ -z "$PIDS" ]; then
+    echo "No $GUNICORN_PROCESS process found."
+else
+    echo "Reloading $GUNICORN_PROCESS gracefully..."
+    for PID in $PIDS; do
+        echo "Sending graceful reload signal to process $PID"
+        kill -HUP "$PID"
+    done
+    echo "Reload complete."
+fi
